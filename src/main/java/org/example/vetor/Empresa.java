@@ -63,7 +63,7 @@ public class Empresa {
      * @param id (int)
      * @return Retorna -1 caso o id do funcionario não seja encontrado
      */
-    public int pesquisaPosicao(int id) {
+    private int pesquisaPosicao(int id) {
         int posicao = -1;
         for (Funcionario funcionario : func) {
             posicao++;

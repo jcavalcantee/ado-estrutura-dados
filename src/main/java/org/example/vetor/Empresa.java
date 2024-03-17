@@ -7,19 +7,9 @@ import java.util.Arrays;
 public class Empresa {
 
     private static int cont = 0;
-    private String cnpj;
     private Funcionario[] func = new Funcionario[1];
 
     public Empresa() {
-    }
-
-    public Empresa(String cnpj) {
-        this.cnpj = cnpj;
-    }
-
-    public Empresa(String cnpj, Funcionario[] func) {
-        this.cnpj = cnpj;
-        this.func = func;
     }
 
     /**
@@ -138,14 +128,6 @@ public class Empresa {
         }
     }
 
-    public String getCnpj() {
-        return cnpj;
-    }
-
-    public void setCnpj(String cnpj) {
-        this.cnpj = cnpj;
-    }
-
     public Funcionario[] getFunc() {
         return func;
     }
@@ -156,7 +138,8 @@ public class Empresa {
 
     @Override
     public String toString() {
-        return "Empresa [cnpj=" + cnpj + ", func=" + Arrays.toString(func) + "]";
+        return "Empresa{" +
+                "func=" + Arrays.toString(func) +
+                '}';
     }
-
 }

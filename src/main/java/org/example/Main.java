@@ -7,7 +7,7 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Empresa cinpal = new Empresa("43655612000125");
+        Empresa cinpal = new Empresa();
         cinpal.inserir(new Funcionario("Patrick", 20, 1200.00));
         cinpal.inserir(new Funcionario("Gouveia", 21, 1300.00));
         cinpal.inserir(new Funcionario("Pedro", 21, 1350.00));
@@ -16,21 +16,21 @@ public class Main {
         cinpal.inserir(new Funcionario("Jefferson", 21, 1370.00));
 
         System.out.println("----------------------------------------------------");
-        System.out.println("Exibindo todos os funcionarios");
+        System.out.println("Exibindo todos os funcionários");
         System.out.println("----------------------------------------------------");
         cinpal.exibir();
         System.out.println("----------------------------------------------------");
-        System.out.println("Exibindo atualização dos funcionarios");
+        System.out.println("Exibindo atualização dos funcionários");
         System.out.println("----------------------------------------------------");
         cinpal.atualizar(5, null, null, 1590D);
         cinpal.exibir();
         System.out.println("----------------------------------------------------");
-        System.out.println("Exibindo os funcionarios por ordem alfabetica");
+        System.out.println("Exibindo os funcionários por ordem alfabetica");
         System.out.println("----------------------------------------------------");
         cinpal.ordenarVetor();
         cinpal.exibir();
         System.out.println("----------------------------------------------------");
-        System.out.println("Exibindo busca de funcionario por ID");
+        System.out.println("Exibindo busca de funcionário por ID");
         System.out.println("----------------------------------------------------");
         System.out.println(cinpal.pesquisaPorId(4));
     }

@@ -57,18 +57,41 @@ public class Empresa {
     }
 
     /**
-     * Localiza o funcionario através do ID informado e exibe todos os dados do
-     * funcionario
+     * Localiza o funcionário através do ID informado e retorna a
+     * posição do objeto no array
      * 
      * @param id (int)
      * @return Retorna -1 caso o id do funcionario não seja encontrado
      */
-    public int pesquisarPorId(int id) {
-        for (int i = 0; i < func.length; i++) {
-            if (id == func[i].getId())
-                System.out.println(func[i]);
+    public int pesquisaPosicao(int id) {
+        int posicao = -1;
+        for (Funcionario funcionario : func) {
+            posicao++;
+            if (funcionario.getId() == id) {
+                break;
+            } else if (posicao == func.length - 1) {
+                posicao = -1;
+            }
         }
-        return -1;
+        return posicao;
+    }
+
+    /**
+     * Localiza o funcionário através do ID informado e retorna o
+     * objeto que tem aquele id.
+     *
+     * @param id (int)
+     * @return Retorna null caso o id do funcionário não seja encontrado
+     */
+    public Funcionario pesquisaPorId(int id) {
+        int posicao = pesquisaPosicao(id);
+        Funcionario funcionario = null;
+        if (posicao >= 0 && posicao < func.length) {
+            funcionario = func[posicao];
+        } else {
+            System.out.println("Funcionário não encontrado!");
+        }
+        return funcionario;
     }
 
     /**
